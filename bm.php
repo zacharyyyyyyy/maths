@@ -10,9 +10,7 @@ function bmCheck($str, $search_str) {
         return false;
     }
     $search_str_place = 0;
-    $count = 0;
     do {
-        $count++;
         $check = true;
         $word_exist_place_bad = -1;
         $bad_word_place = 0;
@@ -59,9 +57,6 @@ function bmCheck($str, $search_str) {
         echo 'check=' . ($check ? 1 : 0) . PHP_EOL;
         if ($complete == false && $check == false) {
             $search_str_place += max(($bad_word_place - $word_exist_place_bad), ($good_word_place - $word_exist_place_good));
-        }
-        if ($count > 20) {
-            break;
         }
     } while ($complete == false && $check == false);
     if ($check == true) {
