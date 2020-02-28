@@ -22,9 +22,7 @@ function kmpCheck($str, $search_str) {
             $l = $next[$l];
         }
     }
-    $count = 0;
     do {
-        $count++;
         if ($str[$str_place] == $search_str[$search_str_place]) {
             $str_place++;
             $search_str_place++;
@@ -41,9 +39,6 @@ function kmpCheck($str, $search_str) {
         }
         if ($search_str_place >= ($search_str_length)) {
             $match = true;
-        }
-        if ($count > 20) {
-            break;
         }
     } while ($complete == false && $match == false);
     if ($match == false) {
